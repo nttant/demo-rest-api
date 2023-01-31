@@ -5,7 +5,7 @@ It implements CRUD operations on a todo list.
 
 ## Database
 
-For the API to work, we need a datbase named: tododb to exist and it needs a table called todo and fields as deicussed below.
+For the API to work, we need a database named: tododb to exist and it needs a table called todo and fields as deicussed below.
 
 ```
 DROP TABLE IF EXISTS todo;

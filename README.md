@@ -68,6 +68,6 @@ Visit http://localhost:3000
 
 ## API end-points
 
-get /
-get and post /todos
-get, put and delete /todos/id
+- get /
+- get and post /todos
+- get, put and delete /todos/id

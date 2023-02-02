@@ -11,15 +11,21 @@ For the API to work, we need a database named: tododb to exist and it needs a ta
 DROP TABLE IF EXISTS todo;
 
 CREATE TABLE todo (
-    id integer NOT NULL,
-    description character varying(255) NOT NULL,
-    CONSTRAINT todo_pkey PRIMARY KEY (id)
+    id SERIAL PRIMARY KEY,
+    description character varying(255) NOT NULL
 ) WITH (oids = false);
+
+INSERT INTO todo
+  ( description )
+VALUES
+  ('Feed the dogs'),
+  ('Wash the car'),
+  ('Dinner date tonight');
 ```
 
 To run this app locally, either setup your own datanbase with table as above, or use the docker container here for a Postgres database.
 
-In the root of this project, run '''docker compose up'''
+In the root of this project, run `docker compose up`
 After the container is completely initialised and started
 Visit http://localhost:8080
 
@@ -57,7 +63,7 @@ DB_PASSWORD=root
 USE_MOCK=true
 ```
 
-## Start the project
+## Start the REST API
 
 ```
 npm install
@@ -66,8 +72,21 @@ npm start
 
 Visit http://localhost:3000
 
+## Shut the REST API down
+
+Press ctrl+c in your terminal
+
 ## API end-points
 
 - get /
 - get and post /todos
 - get, put and delete /todos/id
+
+## Testing the API with Postman
+
+- Start the api as shown above
+- Look in /postman folder in this project to locate the postman collection
+- Open postman
+- Import the postman collection
+- Run the individual imported requests in postman
+- Check the body tab for response data and check that tests under the tests tab (for each request) has passed

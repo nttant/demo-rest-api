@@ -104,7 +104,7 @@ SO THAT I can have confirmation that the REST API is working
 
 GIVEN I am a REST API user
 WHEN I do a GET request to /todos
-THEN the response will include the todo content
+THEN the response will include the todo content (id, description)
 
 GIVEN I am a REST API user
 WHEN I do a GET request to /todos/10
@@ -127,14 +127,20 @@ WHEN I set a .env variable with `USE_MOCK=true`
 THEN I will be able to test the REST API with local mock data
 
 GIVEN I am a REST API user
-WHEN I set a .env variable with `USE_MOCK=false`
+WHEN I set a .env variable with `USE_MOCK=fe`
 THEN I will be able to test the REST API with data in a postgres database
 
 GIVEN I am a developer
 WHEN I run the docker-compose script for this REST API
 THEN I will be able to access a Postgres database hosted in a Docker container
 
-## LImitations
+## Limitations
 
-This REST API does not do any throtteling
-It is not currently protected by a oken
+This task was simple first iteration and is not intended to be a production ready build.
+
+- This REST API does not do any throtelling
+- Pagination for results is not implemented
+- Authentication is not implemented
+- Schema validation of body content for POST or PUT is not implemented
+- The API is not documented (eg SWAGGER)
+- The project does not have an MVC structure
